@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Class Manipulation with JavaScript</title>
+        <!--
+            The next 3 lines load a custom font from google that we can use in our CSS.
+            You can see it being used in the "body" rule in transitions.css
+            Browse the available fonts here: https://fonts.google.com/
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <!-- Load our own CSS file -->
+        <link rel="stylesheet" href="classlist.css" />
+    </head>
+    <body>
+        <h1>Class Manipulation</h1>
+
+        <p class="controls">
+            <!-- Add class names to the button that will be selected and fire each function below -->
+            <button class="trigger">Change the Hidden</button> 
+            <!-- <button class="trigger2">Change to Replaced</button> -->
+            <button class="trigger2">Change to Added</button>
+        </p>
+
+        <div class="target replaced"> 
+            I am the target Hidden!
+        </div>
+
+        <div class="target added">
+            I am the Replaced!
+        </div>
+
+        <script>
+            // Grab the class object from html and save it to a variable
+        const trigger = document.querySelector('.trigger');
+        const trigger2 = document.querySelector('.trigger2');
+        const trigger3 = document.querySelector('.trigger3');
+
+        const target = document.querySelector('.target');
+
+        // Add the event listener to the class object that fires the function name (changeHidden etc.) on click
+        trigger.addEventListener('click', changeHidden);
+        trigger2.addEventListener('click', changeAdded);
+        // trigger3.addEventListener('click', changeTarget);
+
+        function changeHidden() {
+            alert('Wow, it works!');
+            // the function fires a toggle of the class 'hidden', in CSS it displays nothing, so it should dissapear on the 'target'
+            target.classList.toggle("hidden")
+            
+        }
+        function changeAdded() {
+            alert('Wow, it works!');
+            // here we add a brand new class, like injecting a new class into the html code above
+            target.classList.add("added")
+            
+        }
+        // function changeTarget() {
+        //     alert('Wow, it works!');
+        //     target.classList.toggle("hidden")
+            
+        // }
+        </script>
+    </body>
+</html>
