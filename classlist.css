@@ -1,0 +1,40 @@
+/* These rules are just to make the page look presentable */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 2em;
+}
+.controls {
+    margin-bottom: 5em;
+}
+
+/* These rules are the ones we are interested in */
+
+.target {
+    /* This is the default style for the box */
+    font-size: 2em;
+    padding: 3em;
+    background-color: #999;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.replaced {
+    /* This is alternative styling for the box */
+    background-color: #ff6600;
+    padding: 1em;
+    width: 10em;
+    transform: rotate(45deg);
+}
+
+.added {
+    /* These are styles that we want to merge with the default styles for the box */
+    background-color: #6c71c4;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}

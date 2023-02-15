@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Class Manipulation with JavaScript</title>
+        <!--
+            The next 3 lines load a custom font from google that we can use in our CSS.
+            You can see it being used in the "body" rule in transitions.css
+            Browse the available fonts here: https://fonts.google.com/
+        -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <!-- Load our own CSS file -->
+        <link rel="stylesheet" href="classlist.css" />
+    </head>
+    <body>
+        <h1>Class Manipulation</h1>
+
+        <p class="controls">
+            <button class="trigger">Change the target</button>
+            <button class="trigger2">Change the Replaced</button>
+            <button class="trigger3">Change to Orange </button>
+        </p>
+
+        <div class="target added">
+            I am the target element!
+        </div>
+
+        <div class="replaced">
+            test
+        </div>
+
+        <script>
+        const trigger = document.querySelector('.trigger');
+        const trigger2 = document.querySelector('.trigger2');
+        const trigger3 = document.querySelector('.trigger3');
+
+
+
+        const target = document.querySelector('.target');
+        
+        
+
+        trigger.addEventListener('click', changeTarget);
+        trigger2.addEventListener('click', changeAdded);
+        trigger3.addEventListener('click', changeReplaced);
+       
+
+        function changeTarget() {
+            target.classList.toggle('target');
+        }
+        function changeAdded() {
+            target.classList.toggle("hidden")
+        }
+        function changeReplaced() {
+            document.getElementsByClassName(".replaced").innerHTML = "Hello";
+        }
+
+      
+        </script>
+    </body>
+</html>
